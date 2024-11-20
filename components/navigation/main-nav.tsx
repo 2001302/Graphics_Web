@@ -1,63 +1,78 @@
+'use client'
+
 import Link from "next/link"
-import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger, navigationMenuTriggerStyle } from "@/components/ui/navigation-menu"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button"
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu"
+import { Search } from "lucide-react"
 
-const MainNav = () => {
+export function MainNav() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
-        <NavigationMenuItem>
-          <Link href="/" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              홈
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
+    <nav className="border-b">
+      <div className="container mx-auto px-4 flex h-16 items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="font-bold text-xl">
+          Atlas Graphic
+        </Link>
 
-        <NavigationMenuItem>
-          <NavigationMenuTrigger>3D 모델</NavigationMenuTrigger>
-          <NavigationMenuContent>
-            <ul className="grid gap-3 p-6 w-[400px] md:w-[500px] lg:w-[600px] grid-cols-2">
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/search"
-                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                  >
-                    <div className="text-sm font-medium leading-none">모델 검색</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      다양한 3D 모델을 검색하고 찾아보세요
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-              <li>
-                <NavigationMenuLink asChild>
-                  <Link
-                    href="/categories"
-                    className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                  >
-                    <div className="text-sm font-medium leading-none">카테고리</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                      카테고리별로 3D 모델을 탐색하세요
-                    </p>
-                  </Link>
-                </NavigationMenuLink>
-              </li>
-            </ul>
-          </NavigationMenuContent>
-        </NavigationMenuItem>
+        {/* Navigation Menu */}
+        <NavigationMenu>
+          <NavigationMenuList>
+            <NavigationMenuItem>
+              <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
+              <NavigationMenuContent>
+                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                  <li className="row-span-3">
+                    <Link href="/search?category=character" className="block p-3 hover:bg-accent rounded-md">
+                      Characters
+                    </Link>
+                  </li>
+                  <li className="row-span-3">
+                    <Link href="/search?category=environment" className="block p-3 hover:bg-accent rounded-md">
+                      Environments
+                    </Link>
+                  </li>
+                  <li className="row-span-3">
+                    <Link href="/search?category=props" className="block p-3 hover:bg-accent rounded-md">
+                      Props
+                    </Link>
+                  </li>
+                  <li className="row-span-3">
+                    <Link href="/search?category=vehicles" className="block p-3 hover:bg-accent rounded-md">
+                      Vehicles
+                    </Link>
+                  </li>
+                </ul>
+              </NavigationMenuContent>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/search" className="block p-3">
+                Explore
+              </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <Link href="/community" className="block p-3">
+                Community
+              </Link>
+            </NavigationMenuItem>
+          </NavigationMenuList>
+        </NavigationMenu>
 
-        <NavigationMenuItem>
-          <Link href="/upload" legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              모델 업로드
-            </NavigationMenuLink>
-          </Link>
-        </NavigationMenuItem>
-      </NavigationMenuList>
-    </NavigationMenu>
+        {/* Right Side Actions */}
+        <div className="flex items-center gap-4">
+          <Button variant="ghost" size="icon">
+            <Search className="h-5 w-5" />
+          </Button>
+          <Button variant="outline">Sign In</Button>
+          <Button>Upload Model</Button>
+        </div>
+      </div>
+    </nav>
   )
-}
-
-export default MainNav 
+} 
