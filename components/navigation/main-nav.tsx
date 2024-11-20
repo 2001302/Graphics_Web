@@ -4,11 +4,8 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu"
 import { Search } from "lucide-react"
 
@@ -23,41 +20,14 @@ export function MainNav() {
 
         {/* Navigation Menu */}
         <NavigationMenu>
-          <NavigationMenuList>
+          <NavigationMenuList className="flex items-center gap-1">
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Categories</NavigationMenuTrigger>
-              <NavigationMenuContent>
-                <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                  <li className="row-span-3">
-                    <Link href="/search?category=character" className="block p-3 hover:bg-accent rounded-md">
-                      Characters
-                    </Link>
-                  </li>
-                  <li className="row-span-3">
-                    <Link href="/search?category=environment" className="block p-3 hover:bg-accent rounded-md">
-                      Environments
-                    </Link>
-                  </li>
-                  <li className="row-span-3">
-                    <Link href="/search?category=props" className="block p-3 hover:bg-accent rounded-md">
-                      Props
-                    </Link>
-                  </li>
-                  <li className="row-span-3">
-                    <Link href="/search?category=vehicles" className="block p-3 hover:bg-accent rounded-md">
-                      Vehicles
-                    </Link>
-                  </li>
-                </ul>
-              </NavigationMenuContent>
-            </NavigationMenuItem>
-            <NavigationMenuItem>
-              <Link href="/search" className="block p-3">
+              <Link href="/search" className="h-9 px-4 py-2 inline-flex items-center justify-center rounded-md text-sm font-medium">
                 Explore
               </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
-              <Link href="/community" className="block p-3">
+              <Link href="/community" className="h-9 px-4 py-2 inline-flex items-center justify-center rounded-md text-sm font-medium">
                 Community
               </Link>
             </NavigationMenuItem>

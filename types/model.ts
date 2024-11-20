@@ -3,7 +3,6 @@ export interface Model3D {
   title: string
   description: string
   creator: string
-  category: ModelCategory
   fileFormat: ModelFormat
   thumbnailUrl: string
   modelUrl: string
@@ -11,14 +10,6 @@ export interface Model3D {
   updatedAt: Date
   hasAnimation: boolean
 }
-
-export type ModelCategory = 
-  | 'character'
-  | 'environment'
-  | 'props'
-  | 'vehicles'
-  | 'architecture'
-  | 'other'
 
 export type ModelFormat = 
   | 'glb'
