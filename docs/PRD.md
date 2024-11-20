@@ -1,30 +1,30 @@
-# Product Requirements Document (PRD)
+# 제품 요구사항 분석 (PRD)
 
-## 1. Project Overview
+## 1. 프로젝트 개요
 
-"Atlas Graphic" is a website for exhibiting self-created 3D models. Users can upload their own 3D models and showcase them to other users. They can also use 3D models created by other users. The platform provides character animation features, offering a user-friendly environment and exclusive high-quality models optimized for user 3D engines. The ultimate goal is to encourage users to utilize these models in 3D graphics engine programs.
+"Atlas Graphic"은 직접 제작한 3D 모델링을 전시하는 웹사이트입니다. 유저들은 자신이 직접 제작한 3D 모델을 업로드하고, 다른 유저들에게 전시할 수 있습니다. 또한, 다른 유저들이 제작한 3D 모델을 사용할 수 있습니다. 캐릭터 애니메이션 기능을 제공하여, 사용자 친화적인 환경을 제공하고 사용자 3D 엔진에 최적화된 고품질 모델을 독점적으로 제공합니다. 최종적으로는 이 모델을 활용하여 3D 그래픽스 엔진 프로그램을 사용하도록 유도하는 것이 목적입니다.
 
-## 2. User Flow
+## 2. 유저 플로우
 
-1. Search and Explore
-- Filters: Categories, model formats, creator ratings
-- Advanced keyword-based search functionality
+1. 검색 및 탐색
+- 필터: 카테고리, 모델 형식, 제작자 평가
+- 키워드 기반의 고급 검색 기능
 
-2. Model Preview
-- 3D model viewer (360-degree rotation, zoom in/out)
-- Character animation viewer
+2. 모델 미리보기
+- 3D 모델 뷰어(360도 회전, 확대/축소)
+- 캐릭터 애니메이션 뷰어
 
-## 3. Tech Stack
+## 3. 기술스택
 
-Required Tech Stack
-- Next.js App Router: Server-side rendering and routing management
-- ShadCN UI: UI component library
-- TailwindCSS: Styling framework
+필수 기술스택
+- Next.js App Router: 서버 사이드 렌더링 및 라우팅 관리
+- ShadCN UI: UI 컴포넌트 라이브러리
+- TailwindCSS: 스타일링 프레임워크
 
-Additional Tech Stack
-- TypeScript: Static type checking for enhanced stability
-- React Hooks and Context API: State management
-- Local Storage: Local storage for model data
-- Axios or Fetch API: HTTP client for API calls
-- Lucide Icons: Icon library compatible with ShadCN UI
+추가 기술스택
+- TypeScript: 정적 타입 체크를 통한 안정성 확보
+- React Hooks 및 Context API: 상태 관리
+- 로컬 스토리지(Local Storage): 모델 데이터의 로컬 저장
+- Axios 또는 Fetch API: API 호출을 위한 HTTP 클라이언트
+- Lucide Icons: ShadCN UI와 호환되는 아이콘 라이브러리
 
